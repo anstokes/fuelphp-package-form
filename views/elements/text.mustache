@@ -1,0 +1,20 @@
+<div class="form-group {{classes.wrapper}}">
+	<label class="form-label" for="{{id}}">{{label}}</label>
+	<div class="input-group">
+		{{#icon}}
+		<span class="input-group-text" id="inputGroupPrepend">
+			<i class="{{icon.class}}"></i>									
+		</span>
+		{{/icon}}
+		<input
+			type="{{type}}"
+			class="form-control {{classes.control}}"
+			id="{{id}}"
+			name="{{name}}"
+			placeholder="{{placeholder}}"
+			data-validation='{{{validation}}}'
+			{{#required}}required{{/required}}
+		/>
+	</div>
+	<div class="invalid-feedback"></div>
+</div><!--end form-group-->
