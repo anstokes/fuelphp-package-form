@@ -40,6 +40,16 @@ class FormHelper
                             if (($type === 'required') && $parameters && ! isset($field['required'])) {
                                 $fields[$key]['required'] = $parameters;
                             }
+
+                            if (($type === 'length') && is_array($parameters)) {
+                                list($min, $max) = $parameters;
+                                if ($min) {
+                                    $fields[$key]['minlength'] = $min;
+                                }
+                                if ($max) {
+                                    $fields[$key]['maxlength'] = $max;
+                                }
+                            }
                         }
                     }
 
@@ -57,6 +67,7 @@ class FormHelper
                         $type = 'switch';
                         break;
 
+                    case 'email':
                     case 'password':
                     case 'text':
                     default:
